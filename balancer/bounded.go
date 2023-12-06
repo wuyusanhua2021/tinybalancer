@@ -2,6 +2,10 @@ package balancer
 
 import "github.com/lafikl/consistent"
 
+func init() {
+	factories[BoundedBalancer] = NewBounded
+}
+
 type Bounded struct {
 	ch *consistent.Consistent
 }
